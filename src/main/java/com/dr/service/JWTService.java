@@ -61,7 +61,7 @@ public class JWTService {
         return (extractedUsername.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 
-    //This method called inside this class only
+
     public <T> T extractClaim(String token, Function<Claims, T> claimsResolver){
         final Claims claims= extractAllClaims(token);
         return claimsResolver.apply(claims);
